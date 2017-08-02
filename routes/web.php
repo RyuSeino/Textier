@@ -15,3 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('manage', 'Manage\TopController@index');
+
+Route::get('auth/twitter', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/twitter/callback', 'Auth\AuthController@handleProviderCallback');
+
