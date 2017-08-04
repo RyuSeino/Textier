@@ -13,7 +13,9 @@ class TopController extends Controller
         $user = $request->session()->get('user');
         $data['name'] = $user->name;
         $data['nickname'] = $user->nickname;
+        $data['avatar'] = $user->avatar;
 
         return view('manage/top', $data);
     }
 }
+
