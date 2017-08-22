@@ -16,25 +16,14 @@
             integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
             crossorigin="anonymous"></script>
 
-    <title>@yield('title')</title>
+    <title>Textier Top</title>
 
 </head>
 <body>
 <div class="container">
 
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link {{$top or ''}}" {!! isset($top) ? '' : ' href="manage"' !!}>日記管理</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link {{$profile or ''}}" {!! isset($profile) ? '' : ' href="profile"' !!}>プロフィール</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">設定</a>
-        </li>
-    </ul>
-
-    @yield('content')
+    <h1>welcome</h1>
+    <a href="auth/twitter">sign in with Twitter</a>
 
 </div>
 

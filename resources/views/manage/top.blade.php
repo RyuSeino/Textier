@@ -1,7 +1,7 @@
 @extends('manage/layout')
 
 @section('title')
-    日記の管理
+    日記管理
 @endsection
 
 @section('content')

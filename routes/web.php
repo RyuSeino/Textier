@@ -12,10 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('manage', 'Manage\TopController@index');
+Route::get('profile', 'Manage\TopController@profile');
 
 Route::get('auth/twitter', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/twitter/callback', 'Auth\AuthController@handleProviderCallback');
