@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+
+Route::get('signup', 'Manage\TopController@signup');
+Route::post('register/user', 'Manage\TopController@register');
+
 Route::get('manage', 'Manage\TopController@index');
 Route::get('profile', 'Manage\TopController@profile');
 
