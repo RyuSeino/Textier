@@ -1,11 +1,14 @@
 <?php
 
+
 namespace App\Http\Controllers\Manage;
 
+use Log;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Diary;
 use App\Models\User;
+use League\Flysystem\Exception;
 
 
 class TopController extends Controller
@@ -17,13 +20,13 @@ class TopController extends Controller
 
         if (!isset($user) || empty($user)) {
 
-            return redirect('auth/twitter') ;
+            return redirect('auth/twitter');
 
         }
 
-        if(!$userModel->userExists($user->id)) {
+        if (!$userModel->userExists($user->id)) {
 
-            return redirect('signup') ;
+            return redirect('signup');
 
         };
 
@@ -43,7 +46,7 @@ class TopController extends Controller
         $user = $request->session()->get('user');
         if (!isset($user) || empty($user)) {
 
-            return redirect('auth/twitter') ;
+            return redirect('auth/twitter');
 
         }
 
@@ -75,12 +78,13 @@ class TopController extends Controller
             'nickname' => 'required|max:255',
         ]);
 
-        $user = User::create([
+        User::create([
             'name' => $request->input('name'),
             'nickname' => $request->input('nickname'),
-            'service' => 'twitter',
+            'service' => 0,
             'service_id' => $user->id,
         ]);
+
 
         return redirect('manage');
 
