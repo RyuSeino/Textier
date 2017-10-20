@@ -27,7 +27,7 @@
             <a class="nav-link {{$top or ''}}" {!! isset($top) ? '' : ' href="manage"' !!}>日記管理</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{$profile or ''}}" {!! isset($profile) ? '' : ' href="profile"' !!}>プロフィール</a>
+            <a class="nav-link {{$profile or ''}}" {!! isset($profile) ? '' : ' href="user"' !!}>プロフィール</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">設定</a>
