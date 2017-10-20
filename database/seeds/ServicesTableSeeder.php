@@ -12,6 +12,7 @@ class ServicesTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('services')->truncate();
         Service::create([
             'id' => 0,
             'name' => 'twitter',

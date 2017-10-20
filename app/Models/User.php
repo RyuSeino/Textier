@@ -11,7 +11,7 @@ class User extends Model
 
     public function userExists($service_id)
     {
-        $user = $this->where('service', 'twitter')
+        $user = $this->where('service', 0)
             ->where('service_id', $service_id)
             ->get();
 
@@ -19,6 +19,16 @@ class User extends Model
             return false;
         }
         return true;
+
+    }
+
+    public function getUserInfo($service, $service_id)
+    {
+        $user = $this->where('service', $service)
+            ->where('service_id', $service_id)
+            ->get();
+
+        return $user;
 
     }
 

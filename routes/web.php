@@ -11,17 +11,16 @@
 |
 */
 
+
+// Twitter認証関連
+Route::get('auth/twitter', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/twitter/callback', 'Auth\AuthController@handleProviderCallback');
+
 Route::get('/', function () {
     return view('index');
 });
 
+Route::get('manage', 'TopController@index');
+Route::resource('user', 'UserController');
 
-Route::get('signup', 'Manage\TopController@signup');
-Route::post('register/user', 'Manage\TopController@register');
-
-Route::get('manage', 'Manage\TopController@index');
-Route::get('profile', 'Manage\TopController@profile');
-
-Route::get('auth/twitter', 'Auth\AuthController@redirectToProvider');
-Route::get('auth/twitter/callback', 'Auth\AuthController@handleProviderCallback');
 
