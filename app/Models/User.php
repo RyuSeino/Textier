@@ -26,7 +26,7 @@ class User extends Model
     {
         $user = $this->where('service', $service)
             ->where('service_id', $service_id)
-            ->get();
+            ->first();
 
         return $user;
 

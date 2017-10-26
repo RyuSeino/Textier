@@ -77,9 +77,21 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request, User $userModel)
     {
-        //
+
+        $user = $request->session()->get('user');
+
+        $user_info = $userModel->getUserInfo(0, $user->id);
+
+        $data['id'] = $user_info->id;
+        $data['name'] = $user_info->name;
+        $data['nickname'] = $user_info->nickname;
+        $data['avatar'] = $user->avatar;
+        $data['profile'] = 'active';
+
+        return view('profile', $data);
+
     }
 
     /**

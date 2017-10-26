@@ -26,30 +26,16 @@ class TopController extends Controller
 
         };
 
-        $data['name'] = $user->name;
-        $data['nickname'] = $user->nickname;
+        $user_info = $userModel->getUserInfo(0, $user->id);
+
+        $data['id'] = $user_info->id;
+        $data['name'] = $user_info->name;
+        $data['nickname'] = $user_info->nickname;
         $data['avatar'] = $user->avatar;
         $data['top'] = 'active';
 
         return view('manage/top', $data);
-    }
 
-
-    public function profile(Request $request)
-    {
-        $user = $request->session()->get('user');
-        if (!isset($user) || empty($user)) {
-
-            return redirect('auth/twitter');
-
-        }
-
-        $data['name'] = $user->name;
-        $data['nickname'] = $user->nickname;
-        $data['avatar'] = $user->avatar;
-        $data['profile'] = 'active';
-
-        return view('manage/profile', $data);
     }
 
 

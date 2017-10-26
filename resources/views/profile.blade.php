@@ -1,4 +1,4 @@
-@extends('manage/layout')
+@extends('manage.layout')
 
 @section('title')
     プロフィール
