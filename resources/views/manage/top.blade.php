@@ -10,8 +10,9 @@
 
     <div class="form-group">
         <label for="textarea">本日の日記</label>
-        <textarea class="form-control" id="top-diary" rows="6"></textarea>
+        <textarea class="form-control" id="top-diary" rows="19"></textarea>
     </div>
     <button type="submit" class="btn btn-primary" id="btn-submit">更新</button>
 
 @endsection
+

@@ -22,6 +22,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // get /user/create
     public function create(Request $request)
     {
         $user = $request->session()->get('user');
@@ -39,6 +40,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    // post /user
     public function store(Request $request)
     {
         $user = $request->session()->get('user');
@@ -103,3 +105,4 @@ class UserController extends Controller
         //
     }
 }
+

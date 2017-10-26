@@ -37,7 +37,7 @@
         </div>
     @endif
 
-    <form action="user" method="post">
+    <form action="/user" method="post">
         <div class="form-group row">
 
             <label for="name" class="col-sm-2 col-form-label">名前</label>
