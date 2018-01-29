@@ -8,7 +8,9 @@
     <img src="<?= $avatar ?>"/>
     <h1><?= $name ?>(<a href="https://twitter.com/<?= $nickname ?>">@<?= $nickname ?></a>)さん、ようこそ</h1>
 
-    <div>
+
+    <form action="/user/{{ $id }}" method="post">
+
         <div class="form-group row">
 
             <label for="name" class="col-sm-2 col-form-label">名前</label>
@@ -24,7 +26,9 @@
             </div>
 
         </div>
+        {{ method_field('patch') }}
+        {!! csrf_field() !!}
         <button type="submit" class="btn btn-primary" id="btn-submit">更新</button>
-    </div>
+    </form>
 
 @endsection

@@ -104,6 +104,17 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'nickname' => 'required|max:255',
+        ]);
+
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->nickname = $request->nickname;
+        $user->save();
+
+        return redirect('manage');
     }
 
     /**
