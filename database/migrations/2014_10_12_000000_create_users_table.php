@@ -18,7 +18,6 @@ class CreateUsersTable extends Migration
             $table->integer('service');
             $table->bigInteger('service_id');
             $table->string('name');
-            $table->string('nickname');
             $table->timestamps();
             $table->unique(['service', 'service_id']);
         });

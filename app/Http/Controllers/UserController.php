@@ -47,12 +47,10 @@ class UserController extends Controller
 
         $this->validate($request, [
             'name' => 'required|max:255',
-            'nickname' => 'required|max:255',
         ]);
 
         User::create([
             'name' => $request->input('name'),
-            'nickname' => $request->input('nickname'),
             'service' => 0,
             'service_id' => $user->id,
         ]);
@@ -86,7 +84,7 @@ class UserController extends Controller
 
         $data['id'] = $user_info->id;
         $data['name'] = $user_info->name;
-        $data['nickname'] = $user_info->nickname;
+        $data['nickname'] = $user->nickname;
         $data['avatar'] = $user->avatar;
         $data['profile'] = 'active';
 
@@ -106,12 +104,10 @@ class UserController extends Controller
         //
         $this->validate($request, [
             'name' => 'required|max:255',
-            'nickname' => 'required|max:255',
         ]);
 
         $user = User::find($id);
         $user->name = $request->name;
-        $user->nickname = $request->nickname;
         $user->save();
 
         return redirect('manage');
