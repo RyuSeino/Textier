@@ -23,4 +23,6 @@ Route::get('/', function () {
 Route::get('manage', 'TopController@index');
 Route::resource('user', 'UserController');
 
+Route::post('diaries', 'DiariesController@store');
+
 

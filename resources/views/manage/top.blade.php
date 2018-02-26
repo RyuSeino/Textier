@@ -8,11 +8,17 @@
     <img src="<?= $avatar ?>"/>
     <h1><?= $name ?>(<a href="https://twitter.com/<?= $nickname ?>">@<?= $nickname ?></a>)さん、ようこそ</h1>
 
+    {!! Form::open() !!}
+    {{ method_field('patch') }}
     <div class="form-group">
-        <label for="textarea">本日の日記</label>
-        <textarea class="form-control" id="top-diary" rows="19"></textarea>
+        {!! Form::label('diary-body', '本日の日記') !!}
+        {!! Form::textarea('diary-body', null, ['class' => 'form-control']) !!}
     </div>
-    <button type="submit" class="btn btn-primary" id="btn-submit">更新</button>
+    <div class="form-group">
+        {!! Form::submit('更新', ['class' => 'btn btn-primary form-control']) !!}
+    </div>
+    {!! Form::close() !!}
+
 
 @endsection
 
