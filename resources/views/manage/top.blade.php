@@ -8,7 +8,7 @@
     <img src="<?= $avatar ?>"/>
     <h1><?= $name ?>(<a href="https://twitter.com/<?= $nickname ?>">@<?= $nickname ?></a>)さん、ようこそ</h1>
 
-    {!! Form::open() !!}
+    {!! Form::open(['url' => 'diaries']) !!}
     {{ method_field('patch') }}
     <div class="form-group">
         {!! Form::label('diary-body', '本日の日記') !!}
