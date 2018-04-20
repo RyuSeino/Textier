@@ -15,7 +15,9 @@
 
             <label for="name" class="col-sm-2 col-form-label">名前</label>
             <div class="col-sm-10">
-                <input type="text" name="name" class="form-control form-inline" value="{{ $name }}">
+                <input type="text" name="name" class="form-control form-inline {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ $name }}">
+                <span class="invalid-feedback">{{$errors->first('name')}}</span>
+
             </div>
         </div>
 

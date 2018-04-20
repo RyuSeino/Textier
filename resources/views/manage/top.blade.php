@@ -12,7 +12,7 @@
     {{ method_field('patch') }}
     <div class="form-group">
         {!! Form::label('diary-body', '本日の日記') !!}
-        {!! Form::textarea('diary-body', null, ['class' =>$errors->has('diary-body') ? 'form-control is-invalid' : 'form-control'] ) !!}
+        {!! Form::textarea('diary-body', null, ['class' => $errors->has('diary-body') ? 'form-control is-invalid' : 'form-control'] ) !!}
         <span class="invalid-feedback">{{$errors->first('diary-body')}}</span>
     </div>
     <div class="form-group">
