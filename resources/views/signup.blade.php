@@ -23,7 +23,8 @@
 <div class="container">
 
 
-    <h1><?= $name ?>(<a href="https://twitter.com/<?= $nickname ?>">@<?= $nickname ?></a>)さん、ようこそ</h1>
+    <h1>日記サービス Textier</h1>
+    <p><?= $name ?>(<a href="https://twitter.com/<?= $nickname ?>">@<?= $nickname ?></a>)さん、ようこそ</p>
     <div><img src="<?= $avatar ?>"/></div>
 
 
