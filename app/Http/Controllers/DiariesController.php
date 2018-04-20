@@ -16,7 +16,7 @@ class DiariesController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'diary-body' => 'required',
+            'diary-body' => 'required|max:35000',
         ]);
 
         echo $validatedData['diary-body'] ;
