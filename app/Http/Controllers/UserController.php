@@ -79,7 +79,6 @@ class UserController extends Controller
     {
 
         $user = $request->session()->get('user');
-
         $user_info = $userModel->getUserInfo(0, $user->id);
 
         $data['id'] = $user_info->id;
@@ -88,7 +87,7 @@ class UserController extends Controller
         $data['avatar'] = $user->avatar;
         $data['profile'] = 'active';
 
-        return view('profile', $data);
+        return view('manage/profile', $data);
 
     }
 

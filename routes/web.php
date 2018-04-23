@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('manage', 'TopController@index');
+Route::get('manage', 'ManageController@index');
 Route::resource('user', 'UserController');
 
 Route::patch('diaries', 'DiariesController@update');

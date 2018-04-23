@@ -18,6 +18,7 @@ class CreateDiariesTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('content');
+            $table->string('diary_date');
             $table->timestamps();
         });
     }

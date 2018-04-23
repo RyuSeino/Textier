@@ -8,4 +8,7 @@ class Diary extends Model
 {
     //
     protected $table = 'diaries';
+
 }
+
+

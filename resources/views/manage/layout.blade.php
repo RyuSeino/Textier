@@ -15,6 +15,9 @@
     <ul class="nav nav-tabs">
         <a class="navbar-brand" href="/manage">Textier</a>
         <li class="nav-item">
+            <a class="nav-link {{$view or ''}}" {!! isset($view) ? '' : ' href="/view"' !!}>日記閲覧</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link {{$top or ''}}" {!! isset($top) ? '' : ' href="/manage"' !!}>日記管理</a>
         </li>
         <li class="nav-item">
