@@ -36,9 +36,9 @@ return [
     ],
 
     "twitter" => [
-        "client_id" => env("TWITTER_CLIENT_ID"),
-        "client_secret" => env("TWITTER_CLIENT_SECRET"),
-        "redirect" => env("CALLBACK_URL"),
+        "client_id" => getenv("TWITTER_CLIENT_ID"),
+        "client_secret" => getenv("TWITTER_CLIENT_SECRET"),
+        "redirect" => getenv("CALLBACK_URL"),
     ]
 
 ];
