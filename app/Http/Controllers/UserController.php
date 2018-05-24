@@ -84,7 +84,7 @@ class UserController extends Controller
         $data['id'] = $user_info->id;
         $data['name'] = $user_info->name;
         $data['nickname'] = $user->nickname;
-        $data['avatar'] = $user->avatar;
+        $data['avatar'] = $user->user['profile_image_url_https'];
         $data['profile'] = 'active';
 
         return view('manage/profile', $data);
