@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::get('manage', 'ManageController@index');
 Route::resource('user', 'UserController');
 
+Route::get('diaries', 'DiariesController@index');
 Route::patch('diaries', 'DiariesController@update');
 
 

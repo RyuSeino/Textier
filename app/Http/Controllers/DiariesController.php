@@ -11,6 +11,20 @@ class DiariesController extends Controller
 {
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        if(isset($request->user) && !empty($request->user) ) {
+
+            dd($request->user);
+        }
+
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request

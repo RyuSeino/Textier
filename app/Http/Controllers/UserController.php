@@ -75,7 +75,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, Request $request, User $userModel)
+    public function edit(Request $request, User $userModel)
     {
 
         $user = $request->session()->get('user');
@@ -98,14 +98,20 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $userModel, $id)
     {
-        //
         $validatedData = $this->validate($request, [
             'name' => 'required|max:255',
         ]);
 
-        $user = User::find($id);
+        $user = $request->session()->get('user');
+        $user_info = $userModel->getUserInfo(0, $user->id);
+
+        if (intval($id) !== $user_info->id) {
+            abort(500);
+        }
+
+        $user = User::find($user_info->id);
         $user->name = $validatedData['name'];
         $user->save();
 
