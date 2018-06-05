@@ -19,7 +19,8 @@ class DiariesController extends Controller
     {
         if(isset($request->user) && !empty($request->user) ) {
 
-            dd($request->user);
+            $diaries = Diary::where('user_id', $request->user)->get();
+
         }
 
     }

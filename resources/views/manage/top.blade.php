@@ -10,13 +10,18 @@
 
     {!! Form::open(['url' => 'diaries']) !!}
     {{ method_field('patch') }}
-    <div class="form-group">
-        {!! Form::label('diary-body', '本日の日記') !!}
-        {!! Form::textarea('diary-body',  $diary_content , ['class' => $errors->has('diary-body') ? 'form-control is-invalid' : 'form-control'] ) !!}
-        <span class="invalid-feedback">{{ $errors->first('diary-body') }}</span>
+    <div class="field">
+        {!! Form::label('diary-body', '本日の日記', ['class' => 'label']) !!}
+        <div class="control">
+            {!! Form::textarea('diary-body',  $diary_content , ['class' => $errors->has('diary-body') ? 'textarea is-danger' : 'textarea'] ) !!}
+        </div>
+        <p class="help is-danger">{{ $errors->first('diary-body') }}</p>
     </div>
-    <div class="form-group">
-        {!! Form::submit('更新', ['class' => 'btn btn-primary form-control']) !!}
+
+    <div class="field">
+        <div class="control">
+            {!! Form::submit('更新', ['class' => 'button is-primary']) !!}
+        </div>
     </div>
     {!! Form::close() !!}
 

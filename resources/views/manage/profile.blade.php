@@ -11,12 +11,15 @@
 
     <form action="/user/{{ $id }}" method="post">
 
-        <div class="form-group row">
-
-            <label for="name" class="col-sm-2 col-form-label">名前</label>
-            <div class="col-sm-10">
-                <input type="text" name="name" class="form-control form-inline {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ $name }}">
-                <span class="invalid-feedback">{{$errors->first('name')}}</span>
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label">名前</label>
+            </div>
+            <div class="field-body">
+                <input type="text" name="name"
+                       class="control {{ $errors->has('name') ? 'is-invalid' : '' }}"
+                       value="{{ $name }}">
+                <span class="is-danger">{{$errors->first('name')}}</span>
 
             </div>
         </div>
