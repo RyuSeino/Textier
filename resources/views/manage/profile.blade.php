@@ -5,28 +5,25 @@
 @endsection
 
 @section('content')
-    <img src="<?= $avatar ?>"/>
     <h1><?= $name ?>(<a href="https://twitter.com/<?= $nickname ?>">@<?= $nickname ?></a>)さん、ようこそ</h1>
-
+    <img src="<?= $avatar ?>"/>
 
     <form action="/user/{{ $id }}" method="post">
 
-        <div class="field is-horizontal">
-            <div class="field-label is-normal">
-                <label class="label">名前</label>
-            </div>
-            <div class="field-body">
+        <div class="field">
+            <label class="label">名前</label>
+            <div class="control">
                 <input type="text" name="name"
-                       class="control {{ $errors->has('name') ? 'is-invalid' : '' }}"
+                       class="input {{ $errors->has('name') ? 'is-danger' : '' }}"
                        value="{{ $name }}">
                 <span class="is-danger">{{$errors->first('name')}}</span>
-
             </div>
+
         </div>
 
         {{ method_field('patch') }}
         {!! csrf_field() !!}
-        <button type="submit" class="btn btn-primary" id="btn-submit">更新</button>
+        <button type="submit" class="button is-primary" id="btn-submit">更新</button>
     </form>
 
 @endsection

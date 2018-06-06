@@ -29,7 +29,7 @@ class UserController extends Controller
 
         $data['name'] = $user->name;
         $data['nickname'] = $user->nickname;
-        $data['avatar'] = $user->avatar;
+        $data['avatar'] = $user->user['profile_image_url_https'];
 
         return view('signup', $data);
     }

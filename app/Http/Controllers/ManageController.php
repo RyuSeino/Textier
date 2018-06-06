@@ -30,11 +30,12 @@ class ManageController extends Controller
         $user_info = $userModel->getUserInfo(0, $user->id);
 
         $data['id'] = $user_info->id;
-        session(['user_id' => $user_info->id]);
         $data['name'] = $user_info->name;
         $data['nickname'] = $user->nickname;
         $data['avatar'] = $user->user['profile_image_url_https'];
         $data['top'] = 'active';
+        session(['user_id' => $user_info->id]);
+        session(['user_name' => $user_info->name]);
 
         $today = Carbon::today()->toDateString();
         $diary = $diaryModel::where('user_id', $user_info->id)

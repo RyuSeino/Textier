@@ -5,8 +5,8 @@
 @endsection
 
 @section('content')
+    <h1><?= $name ?>(<a href="https://twitter.com/<?= $nickname ?>">@<?= $nickname ?></a>)さん、ようこそ</h1>
     <img src="<?= $avatar ?>"/>
-    <h2>{{ $name }}(<a href="https://twitter.com/{{ $nickname }}">@ {{ $nickname }} </a>)さん、ようこそ</h2>
 
     {!! Form::open(['url' => 'diaries']) !!}
     {{ method_field('patch') }}

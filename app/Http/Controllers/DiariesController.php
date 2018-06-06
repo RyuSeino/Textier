@@ -18,11 +18,20 @@ class DiariesController extends Controller
     public function index(Request $request)
     {
         if(isset($request->user) && !empty($request->user) ) {
-
             $diaries = Diary::where('user_id', $request->user)->get();
-
+            if (count($diaries) == 0) {
+                abort(500);
+            }
         }
+        $data['diaries'] = $diaries;
 
+        $user = $request->session()->get('user');
+        $data['id'] = $request->session()->get('user_id');
+        $data['name'] = $request->session()->get('user_name');
+        $data['nickname'] = $user->nickname;
+        $data['avatar'] = $user->user['profile_image_url_https'];
+
+        return view('show/user_diary', $data);
     }
 
     /**
