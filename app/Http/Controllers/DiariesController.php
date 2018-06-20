@@ -19,9 +19,6 @@ class DiariesController extends Controller
     {
         if(isset($request->user) && !empty($request->user) ) {
             $diaries = Diary::where('user_id', $request->user)->get();
-            if (count($diaries) == 0) {
-                abort(500);
-            }
         }
         $data['diaries'] = $diaries;
 
