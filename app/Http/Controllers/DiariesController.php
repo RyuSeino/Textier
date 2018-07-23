@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Diary;
+use App\Models\User;
 
 
 class DiariesController extends Controller
@@ -24,11 +25,11 @@ class DiariesController extends Controller
         }
         $data['diaries'] = $diaries;
 
-        $user = $request->session()->get('user');
-        $data['id'] = $request->session()->get('user_id');
-        $data['name'] = $request->session()->get('user_name');
-        $data['nickname'] = $user->nickname;
-        $data['avatar'] = $user->user['profile_image_url_https'];
+        $user = User::where('id', $request->user)
+                    ->first();
+
+        $data['id'] = $user->id;
+        $data['name'] = $user->name;
 
         return view('show/user_diary', $data);
     }

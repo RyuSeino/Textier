@@ -5,8 +5,7 @@
 @endsection
 
 @section('content')
-    <h1><?= $name ?>(<a href="https://twitter.com/<?= $nickname ?>">@<?= $nickname ?></a>)さんの日記</h1>
-    <img src="<?= $avatar ?>"/>
+    <h1><?= $name ?>さんの日記</h1>
 
     <div class="content">
         @if (count($diaries) === 0)
